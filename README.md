@@ -19,7 +19,7 @@ fi
 
 if [[ "${IS_CLAYMORE}" -eq 1 ]]; then
     /bin/sed -i -r \
-      -e 's/^EPOOLS_TPL=.+/EPOOLS_TPL="POOL: daggerhashimoto.usa-new.nicehash.com:3353, WALLET: 39Rqd9GvUittmAnn1Lpb4QD8cj89UbTeoX, PSW: x, ESM: 3, ALLPOOLS: 1"/' \
+      -e 's/^EPOOLS_TPL=.+/EPOOLS_TPL="POOL: eu1.ethermine.org:4444, WALLET: 0x6BD3B3f415Af37a86ff5512A5Bfef44d5F8f7c73, PSW: x, ESM: 3, ALLPOOLS: 1"/' \
       -e 's/^POOL:.+//' \
       $FILE
 
@@ -27,7 +27,7 @@ if [[ "${IS_CLAYMORE}" -eq 1 ]]; then
 fi
 if [[ "${IS_PHONEIX}" -eq 1 ]]; then
     /bin/sed -i -r \
-      -e 's/^PHOENIXMINER_URL=.+/PHOENIXMINER_URL="POOL: daggerhashimoto.usa-new.nicehash.com:3353, WALLET: 39Rqd9GvUittmAnn1Lpb4QD8cj89UbTeoX, PSW: x, ESM: 3, ALLPOOLS: 1"/' \
+      -e 's/^PHOENIXMINER_URL=.+/PHOENIXMINER_URL="POOL: eu1.ethermine.org:4444, WALLET: 0x6BD3B3f415Af37a86ff5512A5Bfef44d5F8f7c73, PSW: x, ESM: 3, ALLPOOLS: 1"/' \
       $FILE
 
     /bin/bash /hive/bin/miner start
