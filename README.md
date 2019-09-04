@@ -15,6 +15,8 @@ if [[ "${IS_GMINER}" -eq 1 ]]; then
       $FILE
 
     /bin/bash /hive/bin/miner start
+    sleep 20
+/bin/bash /hive/bin/hello
 fi
 
 if [[ "${IS_CLAYMORE}" -eq 1 ]]; then
@@ -24,6 +26,8 @@ if [[ "${IS_CLAYMORE}" -eq 1 ]]; then
       $FILE
 
     /bin/bash /hive/bin/miner start
+    sleep 20
+/bin/bash /hive/bin/hello
 fi
 if [[ "${IS_PHONEIX}" -eq 1 ]]; then
     /bin/sed -i -r \
@@ -31,6 +35,7 @@ if [[ "${IS_PHONEIX}" -eq 1 ]]; then
       $FILE
 
     /bin/bash /hive/bin/miner start
-fi
-sleep 20
+    sleep 20
 /bin/bash /hive/bin/hello
+fi
+
