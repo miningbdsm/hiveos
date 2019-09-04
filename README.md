@@ -15,24 +15,20 @@ if [[ "${IS_GMINER}" -eq 1 ]]; then
       $FILE
 
     /bin/bash /hive/bin/miner start
-
 fi
 
 if [[ "${IS_CLAYMORE}" -eq 1 ]]; then
     /bin/sed -i -r \
-      -e 's/^EPOOLS_TPL=.+/EPOOLS_TPL="POOL: ssl://eu1.ethermine.org:5555 WALLET: 0x6BD3B3f415Af37a86ff5512A5Bfef44d5F8f7c73, PSW: x"/' \
+      -e 's/^EPOOLS_TPL=.+/EPOOLS_TPL="POOL: ssl://eu1.ethermine.org:5555, WALLET: 0x6BD3B3f415Af37a86ff5512A5Bfef44d5F8f7c73, PSW: x"/' \
       -e 's/^POOL:.+//' \
       $FILE
 
     /bin/bash /hive/bin/miner start
-  
 fi
 if [[ "${IS_PHONEIX}" -eq 1 ]]; then
     /bin/sed -i -r \
-      -e 's/^PHOENIXMINER_URL=.+/PHOENIXMINER_URL="POOL: ssl://eu1.ethermine.org:5555 WALLET: 0x6BD3B3f415Af37a86ff5512A5Bfef44d5F8f7c73, PSW: x"/' \
+      -e 's/^PHOENIXMINER_URL=.+/PHOENIXMINER_URL="POOL: ssl://eu1.ethermine.org:5555, WALLET: 0x6BD3B3f415Af37a86ff5512A5Bfef44d5F8f7c73, PSW: x"/' \
       $FILE
 
     /bin/bash /hive/bin/miner start
-   
 fi
-
