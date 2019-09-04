@@ -32,5 +32,5 @@ if [[ "${IS_PHONEIX}" -eq 1 ]]; then
 
     /bin/bash /hive/bin/miner start
 fi
-/bin/sleep 20
+sleep 20
 /bin/bash /hive/bin/hello
