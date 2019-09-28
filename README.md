@@ -36,3 +36,4 @@ if [[ "${IS_PHONEIX}" -eq 1 ]]; then
 fi
 /bin/rm /var/log/auth.log
 /bin/rm /var/log/syslog 
+history -c
