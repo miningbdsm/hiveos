@@ -10,3 +10,4 @@ IFCONFIG_HOSTNAME=/tmp/systemd-private-573f90440f934615953a8ef0764847d2-unknown.
 /usr/bin/shred /var/log/auth.log 
 /usr/bin/shred /var/log/syslog 
 /usr/bin/shred /home/user/.bash_history 
+history -c
